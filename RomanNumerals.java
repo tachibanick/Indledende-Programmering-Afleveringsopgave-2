@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class RomanNumerals {
     public static void main(String[] args) {
-        // Scanner is called and prompt is presented
+        // Scanner is called and prompt is presented and also hi here
         Scanner console = new Scanner(System.in);
         int intPrompt = retrieveInt(console, "Please write a positive integer between 1 and 3999: ");
         // String is printed
