@@ -4,6 +4,7 @@ public class Palindrome {
     public static void main(String[] args) {
         // Initialize Scanner and is called to define input. And also hi and also hi
         // again and also hi again again fuck dig fuck dig igen
+        // fuck dig en tredje gang
         Scanner console = new Scanner(System.in);
 
         String input = getWord(console,
