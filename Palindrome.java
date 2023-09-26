@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class Palindrome {
     public static void main(String[] args) {
-        // Initialize Scanner and is called to define input. And also hi and also hi
-        // again and also hi again again fuck dig fuck dig igen
-        // fuck dig en tredje gang
+        // Initialize Scanner and is called to define input.
         Scanner console = new Scanner(System.in);
 
         String input = getWord(console,
@@ -25,14 +23,15 @@ public class Palindrome {
         // User input converted to all lower case letters, as to not give false
         // negatives.
         input = input.toLowerCase();
-        input.replaceAll("[,.!?]", "");
+        // Code forced to ignore special characters.
+        input.replaceAll("[^a-zA-Z]", "");
 
         int i = 0, j = input.length() - 1;
 
         while (i < j) {
             if (input.charAt(i) != input.charAt(j))
                 return false;
-            // If the above never evaluates to false, while loop keeps going with
+            // If the above never evaluates to false, the while-loop keeps going with
             // increments.
             i++;
             j--;
@@ -46,7 +45,7 @@ public class Palindrome {
     // Collects input from user, stores it as String
     public static String getWord(Scanner console, String input) {
         System.out.print(input);
-        return console.next();
+        return console.nextLine();
     }
 
 }
