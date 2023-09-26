@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PalindromeCopy {
+public class Palindrome {
     public static void main(String[] args) {
         // Initialize Scanner and is called to define input.
         Scanner console = new Scanner(System.in);
