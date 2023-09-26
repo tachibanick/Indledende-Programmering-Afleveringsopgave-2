@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Palindrome {
     public static void main(String[] args) {
         // Initialize Scanner and is called to define input. And also hi and also hi
-        // again
+        // again and also hi again again
         Scanner console = new Scanner(System.in);
 
         String input = getWord(console,
