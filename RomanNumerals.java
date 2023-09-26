@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RomanNumeralsCopy {
+public class RomanNumerals {
     public static void main(String[] args) {
         // Scanner is called and prompt is presented
         Scanner console = new Scanner(System.in);
