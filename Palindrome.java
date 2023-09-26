@@ -8,8 +8,6 @@ public class Palindrome {
         String input = getWord(console,
                 "Please write a word or a sentence, and I'll check whether it's a palindrome or not: ");
 
-        // method to ignore special characters is called.
-
         // The state of the boolean method prints if evaluated true.
         if (palindromeVerifier(input)) {
             System.out.print("Your input: " + '"' + input + '"' + " is a palindrome!");
