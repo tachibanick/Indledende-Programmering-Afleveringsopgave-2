@@ -20,20 +20,17 @@ public class RandomWalk {
     public static void doPath(int gridSize) {
         int x = 0, y = 0;
         int steps = 0;
+        Random random = new Random();
         do {
             System.out.println("Position = (" + x + "," + y + ")");
-            if (new Random().nextInt(2) == 1) {
-                x = doRandomMove(x);
+            if (random.nextBoolean()) {
+                x += random.nextBoolean() ? 1 : -1;
             } else {
-                y = doRandomMove(y);
+                y += random.nextBoolean() ? 1 : -1;
             }
             steps++;
         } while ((x >= -gridSize && x <= gridSize) && (y >= -gridSize && y <= gridSize));
         System.out.println("ILLEGAL Position = (" + x + "," + y + ")");
         System.out.println("Total number of steps = " + steps);
-    }
-
-    public static int doRandomMove(int position) {
-        return new Random().nextInt(2) == 1 ? position + 1 : position - 1;
     }
 }
