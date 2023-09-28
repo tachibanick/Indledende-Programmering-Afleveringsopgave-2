@@ -7,20 +7,15 @@ public class RandomWalk {
         doPath(gridSize);
     }
 
-    public static int getInt(Scanner console, String prompt) {
+    public static int getPosInt(Scanner console, String prompt) {
         System.out.println(prompt);
-        while (!console.hasNextInt()) {
-            console.nextLine();
-            System.out.println("Not an integer; try again.");
-            System.out.println(prompt);
+        if (!console.hasNextInt()) {
+            throw new IllegalArgumentException("Please enter an integer");
         }
         int temp = console.nextInt();
-        while (temp < 0){
-            console.nextLine();
-            System.out.println("Enter a positive integer.");
-            temp = getInt(console, prompt);
-        }
-        
+        if (temp < 0){
+            throw new IllegalArgumentException("Please enter a positive integer");
+        }       
         return temp;
     }
 
