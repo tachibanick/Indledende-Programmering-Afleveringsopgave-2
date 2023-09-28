@@ -1,11 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/* 
- * Gustav Walker Petersen.
- * 02100 Indledende Programmering E23.
- * This program simulates a random walk in a n-sized 2D grid.
- */
+// This program simulates a random walk in a n-sized 2D grid.
 
 public class RandomWalk {
     public static void main(String[] args) {
@@ -13,9 +9,7 @@ public class RandomWalk {
         doPath(gridSize);
     }
 
-    // This method reads input from the console.
-    // Then it evaluates whether the input is an positive Integer or not.
-    // The method returns the input if it is, else an error will be thrown.
+    // This method throws errors if the user doesnt enter a nonnegative integer
     public static int getPosInt(Scanner console, String prompt) {
         System.out.print(prompt);
         if (!console.hasNextInt()) {
@@ -28,13 +22,7 @@ public class RandomWalk {
         return temp;
     }
 
-    // This method is used to generate the path our entity makes.
-    // The method takes the grid size as an integer then it
-    // prints the entity position to the console and makes
-    // the entity take a random step until the entity is
-    // outside the grid.
-    // Then it prints the illegal position and the total number of steps to the
-    // console.
+    // While x,y are inside of the bounds, it moves randomly up, down left or right, while counting how many steps it takes.
     public static void doPath(int gridSize) {
         int x = 0, y = 0;
         int steps = 0;
