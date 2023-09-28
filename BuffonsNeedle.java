@@ -20,7 +20,7 @@ public class BuffonsNeedle {
                 count++;
             }
         }
-        System.out.println("Number of iterations was " + iterations + " and the number of successes was " + count);
+        System.out.println("The number of iterations was " + iterations + " and the number of successes was " + count);
         System.out.println(iterations + " / " + count + " = " + iterations / (double) (count));
         console.close();
     }
