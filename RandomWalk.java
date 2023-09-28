@@ -8,13 +8,20 @@ public class RandomWalk {
     }
 
     public static int getInt(Scanner console, String prompt) {
-        System.out.print(prompt);
+        System.out.println(prompt);
         while (!console.hasNextInt()) {
-            console.next();
+            console.nextLine();
             System.out.println("Not an integer; try again.");
-            System.out.print(prompt);
+            System.out.println(prompt);
         }
-        return console.nextInt();
+        int temp = console.nextInt();
+        while (temp < 0){
+            console.nextLine();
+            System.out.println("Enter a positive integer.");
+            temp = getInt(console, prompt);
+        }
+        
+        return temp;
     }
 
     public static void doPath(int gridSize) {
