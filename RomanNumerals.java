@@ -2,23 +2,22 @@ import java.util.Scanner;
 
 public class RomanNumerals {
     public static void main(String[] args) {
-        // Scanner is called and prompt is presented and also hi here
+        // Scanner is called and prompt is presented
         Scanner console = new Scanner(System.in);
         int intPrompt = retrieveInt(console, "Please write a positive integer between 1 and 3999: ");
-        // String is printed
         if (intPrompt > 3999 || intPrompt < 1) {
             throw new IllegalArgumentException("Invalid input. Please type an integer between 1 and 3999.");
         }
-        System.out.println("Your input " + "\"" + intPrompt + "\" " + "is " + conIntToRoman(intPrompt)
+        System.out.println("Your input \"" + intPrompt + "\" is " + conIntToRoman(intPrompt)
                 + " in roman numerals. Have a great day.");
     }
 
     // While-loop active while dynamic input is above 0. At every increment
     // correspending to a roman numeral, the corresponding letter is added to the
     // string via the StringBuilder.
-    public static String conIntToRoman(int console) {
+    public static String conIntToRoman(int userInput) {
         StringBuilder romanNum = new StringBuilder();
-        int tempInt = console;
+        int tempInt = userInput;
         while (tempInt > 0) {
             if (tempInt >= 1000) {
                 tempInt -= 1000;
@@ -64,13 +63,12 @@ public class RomanNumerals {
         return romanNum.toString();
     }
 
-    // Scanner for accepting console input by user. Will reject non-integers and
-    // only integers between 1 and 3999.
-    public static int retrieveInt(Scanner console, String question) {
-        System.out.print(question);
+    // Sorts away non-integers
+    public static int retrieveInt(Scanner console, String prompt) {
+        System.out.print(prompt);
         while (!console.hasNextInt()) {
-            console.next();
-            System.out.print("Invalid input. " + question);
+            console.nextLine();
+            System.out.print("Invalid input. " + prompt);
         }
         return console.nextInt();
     }
