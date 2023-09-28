@@ -25,6 +25,7 @@ public class BuffonsNeedle {
         console.close();
     }
 
+    // Only accepts nonnegative integers
     public static int getPosInt(Scanner console, String prompt) {
         System.out.println(prompt);
         while (!console.hasNextInt()) {
