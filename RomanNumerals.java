@@ -12,7 +12,7 @@ public class RomanNumerals {
                 + " in roman numerals. Have a great day.");
     }
 
-    // While-loop active while dynamic input is above 0. At every increment
+    // While-loop active while the temporary integer is above 0. At every increment
     // correspending to a roman numeral, the corresponding letter is added to the
     // string via the StringBuilder.
     public static String conIntToRoman(int userInput) {
