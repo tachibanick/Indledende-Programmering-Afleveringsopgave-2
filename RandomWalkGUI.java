@@ -3,26 +3,28 @@ import java.util.Scanner;
 
 public class RandomWalkGUI {
     public static void main(String[] args) {
-        int gridSize = getInt(new Scanner(System.in), "Enter size of grid: ");
+        int gridSize = getPosInt(new Scanner(System.in), "Enter size of grid: ");
         drawGUI(gridSize);
         doPath(gridSize);
     }
 
-    public static int getInt(Scanner console, String prompt) {
-        System.out.print(prompt);
-        while (!console.hasNextInt()) {
-            console.next();
-            System.out.println("Not an integer; try again.");
-            System.out.print(prompt);
+    public static int getPosInt(Scanner console, String prompt) {
+        System.out.println(prompt);
+        if (!console.hasNextInt()) {
+            throw new IllegalArgumentException("Please enter an integer");
         }
-        return console.nextInt();
+        int temp = console.nextInt();
+        if (temp < 0){
+            throw new IllegalArgumentException("Please enter a positive integer");
+        }       
+        return temp;
     }
 
     public static void doPath(int gridSize) {
         int x = 0, y = 0;
         int steps = 0;
         Random random = new Random();
-        do {
+        while ((x >= -gridSize && x <= gridSize) && (y >= -gridSize && y <= gridSize)) {
             StdDraw.point(x, y);
             System.out.println("Position = (" + x + "," + y + ")");
             if (random.nextBoolean()) {
@@ -31,7 +33,7 @@ public class RandomWalkGUI {
                 y += random.nextBoolean() ? 1 : -1;
             }
             steps++;
-        } while ((x >= -gridSize && x <= gridSize) && (y >= -gridSize && y <= gridSize));
+        }
         System.out.println("ILLEGAL Position = (" + x + "," + y + ")");
         System.out.println("Total number of steps = " + steps);
     }
@@ -40,10 +42,5 @@ public class RandomWalkGUI {
         StdDraw.setXscale(-size, size);
         StdDraw.setYscale(-size, size);
         StdDraw.setPenRadius(0.6 / size);
-        // for (int i = -size; i <= size; i++) {
-        // for (int j = -size; j <= size; j++) {
-        // StdDraw.point(i, j);
-        // }
-        // }
     }
 }
