@@ -28,7 +28,7 @@ public class RandomWalk {
         int x = 0, y = 0;
         int steps = 0;
         Random random = new Random();
-        do {
+        while ((x >= -gridSize && x <= gridSize) && (y >= -gridSize && y <= gridSize)) {
             System.out.println("Position = (" + x + "," + y + ")");
             if (random.nextBoolean()) {
                 x += random.nextBoolean() ? 1 : -1;
@@ -36,7 +36,7 @@ public class RandomWalk {
                 y += random.nextBoolean() ? 1 : -1;
             }
             steps++;
-        } while ((x >= -gridSize && x <= gridSize) && (y >= -gridSize && y <= gridSize));
+        }
         System.out.println("ILLEGAL Position = (" + x + "," + y + ")");
         System.out.println("Total number of steps = " + steps);
     }
