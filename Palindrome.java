@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class Palindrome {
+public class PalindromeCopy {
     public static void main(String[] args) {
         // Initialize Scanner and is called to define input.
         Scanner console = new Scanner(System.in);
-
         String input = getWord(console,
                 "Please write a word or a sentence, and I'll check whether it's a palindrome or not: ");
 
@@ -22,8 +21,11 @@ public class Palindrome {
         // negatives.
         input = input.toLowerCase();
         // Code forced to ignore special characters.
-        input.replaceAll("[^a-zA-Z]", "");
+        input.replaceAll("[^a-zA-ZæøåÆØÅ]", "");
 
+        // Integers valued a 0 (beginning of String) and indexed -1 (ending of String),
+        // and assigned individual variables. i and j then "moves" towards each other,
+        // and will only be interrupted if they at any point don't match.
         int i = 0, j = input.length() - 1;
 
         while (i < j) {
