@@ -21,7 +21,7 @@ public class PalindromeCopy {
         // negatives.
         input = input.toLowerCase();
         // Code forced to ignore special characters.
-        input.replaceAll("[^a-zA-ZæøåÆØÅ]", "");
+        input = input.replaceAll("[^a-zA-ZæøåÆØÅ]", "");
 
         // Integers valued a 0 (beginning of String) and indexed -1 (ending of String),
         // and assigned individual variables. i and j then "moves" towards each other,
