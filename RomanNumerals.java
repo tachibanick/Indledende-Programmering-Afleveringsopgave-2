@@ -22,27 +22,27 @@ public class RomanNumerals {
             if (tempInt >= 1000) {
                 tempInt -= 1000;
                 romanNum.append("M");
-            } else if (tempInt >= 999) {
-                tempInt -= 999;
-                romanNum.append("IM");
+            } else if (tempInt >= 900) {
+                tempInt -= 900;
+                romanNum.append("CM");
             } else if (tempInt >= 500) {
                 tempInt -= 500;
                 romanNum.append("D");
-            } else if (tempInt >= 499) {
-                tempInt -= 499;
-                romanNum.append("ID");
+            } else if (tempInt >= 400) {
+                tempInt -= 400;
+                romanNum.append("CD");
             } else if (tempInt >= 100) {
                 tempInt -= 100;
                 romanNum.append("C");
-            } else if (tempInt >= 99) {
-                tempInt -= 99;
-                romanNum.append("IC");
+            } else if (tempInt >= 90) {
+                tempInt -= 90;
+                romanNum.append("XC");
             } else if (tempInt >= 50) {
                 tempInt -= 50;
                 romanNum.append("L");
-            } else if (tempInt >= 49) {
-                tempInt -= 49;
-                romanNum.append("IL");
+            } else if (tempInt >= 40) {
+                tempInt -= 40;
+                romanNum.append("XL");
             } else if (tempInt >= 10) {
                 tempInt -= 10;
                 romanNum.append("X");
