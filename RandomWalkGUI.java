@@ -1,12 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/* 
- * Gustav Walker Petersen.
- * 02100 Indledende Programmering E23.
- * This program simulates a random walk in a n-sized 2D grid.
- * And displays it using a GUI. 
- */
+//This program simulates a random walk in a n-sized 2D grid and displays it using a GUI. 
 
 public class RandomWalkGUI {
     public static void main(String[] args) {
@@ -15,9 +10,7 @@ public class RandomWalkGUI {
         doPath(gridSize);
     }
 
-    // This method reads input from the console.
-    // Then it evaluates whether the input is an positive Integer or not.
-    // The method returns the input if it is, else an error will be thrown.
+    // This methods throws errors if the user doesnt input a non-negative integer
     public static int getPosInt(Scanner console, String prompt) {
         System.out.print(prompt);
         if (!console.hasNextInt()) {
@@ -30,12 +23,7 @@ public class RandomWalkGUI {
         return temp;
     }
 
-    // This method is used to generate the path our entity makes.
-    // The method takes the grid size as an integer then it
-    // prints the entity position to the console, draws it to the
-    // GUI and makes the entity take a random step until the entity
-    // is outside the grid. Then it prints the illegal position and
-    // the total number of steps to the console.
+    // While x,y is inside of the bounds, it moves randomly up, down, left or right and draws its position with StdDraw
     public static void doPath(int gridSize) {
         int x = 0, y = 0;
         int steps = 0;
@@ -54,8 +42,7 @@ public class RandomWalkGUI {
         System.out.println("Total number of steps = " + steps);
     }
 
-    // This method takes the grid size as an argument
-    // and defines the borders of the grid and the point size.
+// Defines the bounds of StdDraw based on user inputted gridsize
     public static void drawGUI(int size) {
         StdDraw.setXscale(-size, size);
         StdDraw.setYscale(-size, size);
