@@ -13,19 +13,19 @@ public class BuffonsNeedle {
 
             //The needle gets an orientation, and the horizontal distance the needle covers is calculated
             double orientation = rand.nextDouble()*2*Math.PI;
-            double distTopNeedle = Math.sin(orientation);
+            double distTopNeedle = Math.cos(orientation);
 
             //If the summed distance is over 2 or under 0, the needle has crossed a line, and it's counted.
             if (distTopNeedle + distLowerNeedle > 2 || distTopNeedle + distLowerNeedle < 0){
                 count++;
             }
         }
-        System.out.println("The number of iterations was " + iterations + " and the number of successes was " + count);
+        System.out.println("Number of iterations was " + iterations + " and the number of successes was " + count);
         System.out.println(iterations + " / " + count + " = " + iterations / (double) (count));
         console.close();
     }
 
-    // Only accepts nonnegative integers
+    // Sorts away everything but non-negative integers.
     public static int getPosInt(Scanner console, String prompt) {
         System.out.println(prompt);
         while (!console.hasNextInt()) {
